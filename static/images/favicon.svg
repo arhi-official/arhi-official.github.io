@@ -1,0 +1,29 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 耳朵 -->
+  <path d="M12 18 L4 4 L22 10 Z" fill="#E67E22"/> <!-- 左耳橘色 -->
+  <path d="M52 18 L60 4 L42 10 Z" fill="#2C3E50"/> <!-- 右耳黑色 -->
+  
+  <!-- 脸部轮廓 (白色底) -->
+  <circle cx="32" cy="34" r="24" fill="#FFFFFF" stroke="#2C3E50" stroke-width="2"/>
+  
+  <!-- 花纹 (三花特征) -->
+  <path d="M32 10 Q 45 10 52 20 L 53 15 Q 45 10 32 10 Z" fill="#2C3E50"/> <!-- 头顶黑斑 -->
+  <circle cx="15" cy="45" r="5" fill="#E67E22"/> <!-- 脸颊橘斑 -->
+  
+  <!-- 眼睛 -->
+  <circle cx="22" cy="32" r="3" fill="#2C3E50"/>
+  <circle cx="42" cy="32" r="3" fill="#2C3E50"/>
+  
+  <!-- 鼻子 -->
+  <path d="M30 38 L34 38 L32 41 Z" fill="#FF8A80"/>
+  
+  <!-- 嘴巴 -->
+  <path d="M32 41 Q 28 46 25 43" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 41 Q 36 46 39 43" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 胡须 -->
+  <line x1="10" y1="36" x2="2" y2="34" stroke="#2C3E50" stroke-width="1"/>
+  <line x1="10" y1="40" x2="2" y2="42" stroke="#2C3E50" stroke-width="1"/>
+  <line x1="54" y1="36" x2="62" y2="34" stroke="#2C3E50" stroke-width="1"/>
+  <line x1="54" y1="40" x2="62" y2="42" stroke="#2C3E50" stroke-width="1"/>
+</svg>

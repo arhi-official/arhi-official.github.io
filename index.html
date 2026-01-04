@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ARHI adapts dense reward models online for real-robot reinforcement learning with human guidance.">
+  <meta name="keywords" content="ARHI, reward adaptation, real-robot RL, reinforcement learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARHI: Human-Guided Reward Adaptation for Real-Robot Reinforcement Learning</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8TD5WLEEF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-W8TD5WLEEF');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    /* Video wrapper: keep rounded corners and hide overflow */
+    .video-container {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      line-height: 0; 
+      background: #333; 
+      /* Mask to ensure corners stay clipped */
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      mask-image: radial-gradient(white, black);
+    }
+
+    /* Video element: rounded, fill width, no shadows */
+    .rounded-video {
+      border-radius: 10px !important;
+      display: block;
+      width: 100%;
+      box-shadow: none !important;
+    }
+
+    /* Disable hover effects for all task videos; use IDs for specificity */
+    #insert-battery-video,
+    #insert-battery-video:hover,
+    #execute-machine-video,
+    #execute-machine-video:hover,
+    #release-switch-video,
+    #release-switch-video:hover,
+    #pull-tissue-video,
+    #pull-tissue-video:hover,
+    #pour-coffee-video,
+    #pour-coffee-video:hover,
+    .video-container:hover {
+      transform: none !important;      /* Prevent scale/translate */
+      box-shadow: none !important;     /* Prevent hover shadows */
+      filter: none !important;         /* Prevent hover filters */
+      transition: none !important;     /* Prevent hover transitions */
+      cursor: default !important;      /* Keep default cursor */
+    }
+  </style>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ARHI: Human-Guided Reward Adaptation for Real-Robot Reinforcement Learning</h1>
+          
+          <div class="is-size-5 publication-authors">
+             </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/overview.png" alt="ARHI Framework Overview" style="width: 75%; height: auto; display: block; margin: 0 auto;">
+      
+      <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
+        <strong>ARHI Framework Overview.</strong> 
+        ARHI addresses the misalignment of pretrained rewards by employing a dual-loop online adaptation framework that integrates value relabeling and human action overrides, achieving superior sample efficiency and robustness in real-world tasks.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Real-world reinforcement learning enables robots to adapt directly to complex physical dynamics, avoiding the reality gap inherent in simulation and rendering previously infeasible manipulation skills a reality. However, the <strong>high cost of real-world exploration</strong> strictly limits sample availability. While sparse rewards offer stability, maximizing sample efficiency typically necessitates <strong>dense supervision extracted from pretrained models</strong>. The challenge, however, is that these <strong>generic priors are often misaligned</strong> with the specific distributions encountered during real-world deployment.
+          </p>
+          <p>
+            In response, we propose <strong>ARHI</strong>, a <strong>parameter-efficient online reward adaptation framework</strong> that adapts such dense and faithful guidance in real time. To achieve this, we employ a <strong>decoupled fine-tuning strategy</strong> that anchors generalizable semantic knowledge within a frozen backbone, while channeling adaptation exclusively through a <strong>lightweight head</strong> to dynamically calibrate the reward model against on-policy dynamics. Integrated into an <strong>asynchronous dual-loop framework</strong>, this continuously updating reward drives policy optimization, ensuring precise alignment to accelerate sample-efficient convergence. Extensive real-world experiments on six manipulation tasks demonstrate that ARHI <strong>outperforms state-of-the-art baselines</strong>, improving task success by <strong>23.3%</strong> and reducing human effort by <strong>28.0%</strong>, while achieving a <strong>47.6% reduction in performance drop</strong> under challenging deployment shifts. Code and videos are available on our Project Page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experimental Tasks</h2>
+        
+        <div class="columns is-centered is-multiline">
+          
+          <div class="column is-one-third">
+            <div class="content">
+              <h4 class="title is-5">Stack Block</h4>
+              <div class="video-container">
+                <video 
+                  id="stack-block-video" 
+                  class="rounded-video"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  width="100%">
+                  <source src="./static/videos/stackblock.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-grey is-size-7" style="margin-top: 6px;">Video shown at 12× speed</p>
+            </div>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="content">
+              <h4 class="title is-5">Insert Battery</h4>
+              
+              <div class="video-container">
+                <video 
+                  id="insert-battery-video" 
+                  class="rounded-video"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  width="100%">
+                  <source src="./static/videos/insert_battery.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-grey is-size-7" style="margin-top: 6px;">Video shown at 12× speed</p>
+            </div>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="content">
+              <h4 class="title is-5">Pull Tissue</h4>
+              <div class="video-container">
+                <video 
+                  id="pull-tissue-video" 
+                  class="rounded-video"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  width="100%">
+                  <source src="./static/videos/pull_tissue.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-grey is-size-7" style="margin-top: 6px;">Video shown at 12× speed</p>
+            </div>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="content">
+              <h4 class="title is-5">Release Switch</h4>
+              <div class="video-container">
+                <video 
+                  id="release-switch-video" 
+                  class="rounded-video"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  width="100%">
+                  <source src="./static/videos/release_switch.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-grey is-size-7" style="margin-top: 6px;">Video shown at 12× speed</p>
+            </div>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="content">
+              <h4 class="title is-5">Execute Machine</h4>
+              <div class="video-container">
+                <video 
+                  id="execute-machine-video" 
+                  class="rounded-video"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  oncontextmenu="return false;">
+                  <source src="./static/videos/execute_machine.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-grey is-size-7" style="margin-top: 6px;">Video shown at 12× speed</p>
+            </div>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="content">
+              <h4 class="title is-5">Pour Coffee</h4>
+              <div class="video-container">
+                <video 
+                  id="pour-coffee-video" 
+                  class="rounded-video"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  width="100%">
+                  <source src="./static/videos/pour_coffee.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-grey is-size-7" style="margin-top: 6px;">Video shown at 12× speed</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="#" class="external-link" disabled>
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="#" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website template is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies Webpage</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
