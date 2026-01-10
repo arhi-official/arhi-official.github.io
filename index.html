@@ -101,7 +101,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/overview.png" alt="ARHI Framework Overview" style="width: 75%; height: auto; display: block; margin: 0 auto;">
+      <img src="./static/images/overview.png" alt="ARHI Framework Overview" style="width: 68%; height: auto; display: block; margin: 0 auto;">
       
       <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
         <strong>ARHI Framework Overview.</strong> 
@@ -122,7 +122,7 @@
             Real-world reinforcement learning enables robots to adapt directly to complex physical dynamics, avoiding the reality gap inherent in simulation and rendering previously infeasible manipulation skills a reality. However, the <strong>high cost of real-world exploration</strong> strictly limits sample availability. While sparse rewards offer stability, maximizing sample efficiency typically necessitates <strong>dense supervision extracted from pretrained models</strong>. The challenge, however, is that these <strong>generic priors are often misaligned</strong> with the specific distributions encountered during real-world deployment.
           </p>
           <p>
-            In response, we propose <strong>ARHI</strong>, a <strong>parameter-efficient online reward adaptation framework</strong> that adapts such dense and faithful guidance in real time. To achieve this, we employ a <strong>decoupled fine-tuning strategy</strong> that anchors generalizable semantic knowledge within a frozen backbone, while channeling adaptation exclusively through a <strong>lightweight head</strong> to dynamically calibrate the reward model against on-policy dynamics. Integrated into an <strong>asynchronous dual-loop framework</strong>, this continuously updating reward drives policy optimization, ensuring precise alignment to accelerate sample-efficient convergence. Extensive real-world experiments on six manipulation tasks demonstrate that ARHI <strong>outperforms state-of-the-art baselines</strong>, improving task success by <strong>23.3%</strong> and reducing human effort by <strong>28.0%</strong>, while achieving a <strong>47.6% reduction in performance drop</strong> under challenging deployment shifts. Code and videos are available on our Project Page.
+            In response, we propose <strong>ARHI</strong>, a <strong>parameter-efficient online reward adaptation framework</strong> that adapts such dense and faithful guidance in real time. To achieve this, we employ a <strong>decoupled fine-tuning strategy</strong> that anchors generalizable semantic knowledge within a frozen backbone, while channeling adaptation exclusively through a <strong>lightweight head</strong> to dynamically calibrate the reward model against on-policy dynamics. Integrated into an <strong>asynchronous dual-loop framework</strong>, this continuously updating reward drives policy optimization, ensuring precise alignment to accelerate sample-efficient convergence. Extensive real-world experiments on six manipulation tasks demonstrate that ARHI <strong>outperforms state-of-the-art baselines</strong>, improving task success by <strong>23.3%</strong> and reducing human effort by <strong>28.0%</strong>, while achieving a <strong>47.6% reduction in performance drop</strong> under challenging deployment shifts.
           </p>
         </div>
       </div>
